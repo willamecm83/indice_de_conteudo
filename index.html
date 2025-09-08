@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Índice de Links</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🌐 Biblioteca da Formaticabit</h1>
+    <button id="theme-toggle">🌙 Modo Escuro</button>
+  </header>
+
+  <main>
+    <!-- CARD ÚNICO: GitHub -->
+    <div class="card">
+      <h2>Ferramentas</h2>
+      <a href="pages/git_github/gitGithu.html">GitHub</a>
+    </div>
+
+    <!-- IFRAME CENTRALIZADO -->
+    <div class="iframe-container">
+      <iframe src="https://formaticabit.substack.com/embed" 
+              width="480" height="320" 
+              style="border:1px solid #EEE; background:white;" 
+              frameborder="0" scrolling="no"></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Formaticabit - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // Carregar preferência salva
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️ Modo Claro";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.add("transition-theme");
+      body.classList.toggle("dark-mode");
+
+      if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️ Modo Claro";
+        localStorage.setItem("theme", "dark");
+      } else {
+        toggleBtn.textContent = "🌙 Modo Escuro";
+        localStorage.setItem("theme", "light");
+      }
+
+      setTimeout(() => {
+        body.classList.remove("transition-theme");
+      }, 400);
+    });
+  </script>
+</body>
+</html>
