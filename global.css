@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Configurações Globais & Variáveis
+   ========================================================================== */
+:root {
+    --bg-color: #FAF9F6;       /* Creme confortável para leitura */
+    --text-main: #1A1A1A;      /* Grafite escuro para suavizar o contraste */
+    --text-muted: #666666;     /* Cinza médio para textos secundários */
+    --accent: #2A4D45;         /* Verde floresta sutil para os botões */
+    --font-title: 'Raleway', sans-serif;
+    --font-body: 'Lora', Georgia, serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    padding: 4rem 2rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Layout & Estrutura
+   ========================================================================== */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Header Editorial */
+.header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 4rem auto;
+}
+
+.header-subtitle {
+    font-family: var(--font-title);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.header-title {
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: 2.8rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.divider {
+    width: 40px;
+    height: 3px;
+    background-color: var(--text-main);
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Grupo de Botões Principal (Dentro do Main)
+   ========================================================================== */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.btn {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 0.7rem 1.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 50px; /* Cantos arredondados estilo pílula */
+    background-color: #FFFFFF; /* Fundo branco para destacar a sombra */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03); /* Sombra suave */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn:hover {
+    color: var(--bg-color);
+    background-color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px rgba(42, 77, 69, 0.2); /* Sombra colorida no hover */
+    transform: translateY(-2px); /* Efeito sutil de flutuar */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    body {
+        padding: 2rem 1rem;
+    }
+    .header-title {
+        font-size: 2.2rem;
+    }
+    .button-group {
+        gap: 0.8rem;
+        flex-direction: column; /* Alinha os botões verticalmente no celular */
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+    text-align: center;
+    margin-top: 6rem;
+    font-family: var(--font-title);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
