@@ -1,63 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Índice de Links</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Conteúdo — Meu Blog</title>
+    <!-- Importação das fontes Raleway e Lora do Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Vínculo com o arquivo de estilos externo -->
+    <link rel="stylesheet" href="global.css">
 </head>
 <body>
-  <header>
-    <h1>🌐 Biblioteca da Formaticabit</h1>
-    <button id="theme-toggle">🌙 Modo Escuro</button>
-  </header>
 
-  <main>
-    <!-- CARD ÚNICO: GitHub -->
-    <div class="card">
-      <h2>Ferramentas</h2>
-      <a href="pages/git_github/gitGithu.html">GitHub</a>
-    </div>
+    <header class="header">
+        <p class="header-subtitle">Explore as Leituras</p>
+        <h1 class="header-title">Índice do Blog</h1>
+        <div class="divider"></div>
+    </header>
 
-    <!-- IFRAME CENTRALIZADO -->
-    <div class="iframe-container">
-      <iframe src="https://formaticabit.substack.com/embed" 
-              width="480" height="320" 
-              style="border:1px solid #EEE; background:white;" 
-              frameborder="0" scrolling="no"></iframe>
-    </div>
-  </main>
+    <main class="container">
+        <!-- Os botões agora residem na área principal de conteúdo -->
+        <div class="button-group">
+            <a href="URL_LOGICA_DE_PROGRAMACAO" class="btn">Lógica de programação</a>
+            <a href="URL_PRIMEIROS_PASSOS_JAVASCRIPT" class="btn">Primeiros passos com Javascript</a>
+        </div>
+    </main>
 
-  <footer>
-    <p>© 2025 Formaticabit - Todos os direitos reservados.</p>
-  </footer>
+    <footer class="footer">
+        <p>&copy; 2026 Meu Blog. Todos os direitos reservados.</p>
+    </footer>
 
-  <script>
-    const toggleBtn = document.getElementById("theme-toggle");
-    const body = document.body;
-
-    // Carregar preferência salva
-    if (localStorage.getItem("theme") === "dark") {
-      body.classList.add("dark-mode");
-      toggleBtn.textContent = "☀️ Modo Claro";
-    }
-
-    toggleBtn.addEventListener("click", () => {
-      body.classList.add("transition-theme");
-      body.classList.toggle("dark-mode");
-
-      if (body.classList.contains("dark-mode")) {
-        toggleBtn.textContent = "☀️ Modo Claro";
-        localStorage.setItem("theme", "dark");
-      } else {
-        toggleBtn.textContent = "🌙 Modo Escuro";
-        localStorage.setItem("theme", "light");
-      }
-
-      setTimeout(() => {
-        body.classList.remove("transition-theme");
-      }, 400);
-    });
-  </script>
 </body>
 </html>
